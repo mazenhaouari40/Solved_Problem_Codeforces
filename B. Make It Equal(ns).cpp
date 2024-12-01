@@ -1,10 +1,17 @@
 #include<iostream>
 using namespace std;
-#include <algorithm> // pour std::max_element
 
 
-int chercher(int* t, int n) {
-    return std::max_element(t, t + n) - t; // Retourne l'indice du maximum
+int chercher(int * t,int n){
+    int maximum=0,indi=0;
+    for(int i=0;i<n;i++)
+    {
+        if(t[i]>maximum){
+            maximum=t[i];
+            indi=i;
+        }
+    }
+    return indi;
 }
 bool non_negative(int * t,int n){
     int i=0;
