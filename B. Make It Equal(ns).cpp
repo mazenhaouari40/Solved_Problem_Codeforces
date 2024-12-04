@@ -29,12 +29,9 @@ bool egaux(int * t,int n){
 return i==n;
 }
 
-int main(){
-int t,n;
-cin>>t;
-while(t--){
-
-    cin>>n;
+void solve(){
+    int n;
+cin>>n;
     int a[n],mi_op=0,mx;
     for(int i=0;i<n;i++){
         cin>>a[i];
@@ -68,6 +65,14 @@ while(t--){
         }
 
 
+}
+
+
+int main(){
+int t,n;
+cin>>t;
+while(t--){
+solve();
 }
 
 
