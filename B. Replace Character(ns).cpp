@@ -51,9 +51,14 @@ while(t--){
         ch[x]=ch[alp_indice];
     }else
     {
-        int apres= alp[  ch[alp_indice+1]-97].occ;
-        int avant= alp[ch[alp_indice - (alp[ch[alp_indice]-97 ].occ)] -97].occ;
+        int apres= alp[  ch[alp_indice+1]-97].occ,avant;
 
+        if ((alp_indice - (alp[ch[alp_indice]-97 ].occ))<0){
+            avant=1000;
+        }else
+
+         {avant= alp[ch[alp_indice - (alp[ch[alp_indice]-97 ].occ)] -97].occ;}
+     //   cout<<"avant= "<<avant<<"apres= "<<apres<<endl;
         if (avant> apres ){
                         ch[alp_indice+1] = ch[alp_indice];
         }
