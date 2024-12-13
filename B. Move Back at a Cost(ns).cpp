@@ -25,7 +25,7 @@ void solve(){
     vector<int> trie_a= a;
     sort(trie_a.begin(),trie_a.end());
     int i=0,nb=0;
-    while( nb<n+1 ){
+    while( nb<n ){
         if (a[i] == trie_a[i]){
             i++;
         }
@@ -36,15 +36,10 @@ void solve(){
                 a.erase(a.begin()+i);
                 a.push_back(x);
             }
-            else
-            {
-                break;
-            }
         }
         nb++;
     }
 
-    cout<<endl;
     for(int i=0;i<n;i++){
         cout<<a[i]<<" ";
     }
