@@ -1,5 +1,5 @@
 
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void arrangement (int n,int k)

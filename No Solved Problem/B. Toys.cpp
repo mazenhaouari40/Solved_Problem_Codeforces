@@ -3,7 +3,7 @@ using namespace std;
 #include <vector>
 
 int main(){
-    string ch1;
+    string ch1,res="";
     vector<string> t1;
     vector<string> t2;
     for(int i = 0; i < 3; i++){
@@ -15,23 +15,28 @@ int main(){
     while(i < 3){
         k=0;
         j=0;
-        cout<<"size="<<t2.size()<<"k="<<k<<endl;
+       // cout<<"size="<<t2.size()<<"k="<<k<<endl;
         while (j<t1[i].length() ) {
             cout<<"chaine = "<<t1[i]<<" lettre= "<<t1[i][j]<<endl;
 
             if (k== t2.size()){
                 t2.push_back("");
             }
-            k=0;
+            //k=0;
             while(t2[k].length()==2 && k<t2.size()){
                 k++;
             }
-            cout<<"verif k= "<<k<<endl;
-            if(t2[k].find(t1[i][j]) == string::npos ) {
+           // cout<<"verif k= "<<k<<endl;
+
+            int nbocc = count(t1[i].begin(), t1[i].end(), t1[i][j]);
+
+          //  if(t2[k].find(t1[i][j]) == string::npos ) {
+            if (res.find(t1[i][j]) == string::npos || nbocc > 1){
                 t2[k] = t2[k]+t1[i][j];
-                cout<<"t2["<<k<<"]="<<t2[k]<<endl;
+                //cout<<"t2["<<k<<"]="<<t2[k]<<endl;
                 k++;
-                cout<<"boucle size="<<t2.size()<<"k="<<k<<endl;
+                res = res + t1[i][j];
+                //cout<<"boucle size="<<t2.size()<<"k="<<k<<endl;
             }
             j++;
         }
@@ -40,8 +45,11 @@ int main(){
 
 
 
-    cout <<"taille="<< t2.size() << endl;
-    for(int i = 0; i < t2.size() -1; i++){
+    cout << t2.size()-1<< endl;
+   /* for (string& word : t2) {
+        sort(word.begin(), word.end());
+    }*/
+    for(int i = 0; i < t2.size()-1 ; i++){
         cout << t2[i] << endl;
     }
 
